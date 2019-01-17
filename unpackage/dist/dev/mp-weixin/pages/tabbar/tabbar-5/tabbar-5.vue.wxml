@@ -1,0 +1,37 @@
+<template name="46be1920">
+  <view class="_view data-v-39547e41">
+    <view class="_view data-v-39547e41 header {{[isH5Plus ? 'status' : '']}}">
+      <view class="_view data-v-39547e41 userinfo">
+        <view class="_view data-v-39547e41 face">
+          <image src="{{userinfo.face}}" class="_image data-v-39547e41"></image>
+        </view>
+        <view class="_view data-v-39547e41 info">
+          <view class="_view data-v-39547e41 username">{{userinfo.username}}</view>
+          <view class="_view data-v-39547e41 integral">积分:{{userinfo.integral}}</view>
+        </view>
+      </view>
+      <view class="_view data-v-39547e41 setting">
+        <image src="../../../static/HM-PersonalCenter/setting.png" class="_image data-v-39547e41"></image>
+      </view>
+    </view>
+    <view class="_view data-v-39547e41 orders">
+      <view class="_view data-v-39547e41 box">
+        <view class="_view data-v-39547e41 label" wx:key="row.name" hover-class="hover" hover-stay-time="50" bindtap="handleProxy" data-eventid="{{'xWy-0-'+index}}" data-comkey="{{$k}}" wx:for="{{orderTypeLise}}" wx:for-index="index" wx:for-item="row">
+          <view class="_view data-v-39547e41 icon">
+            <view class="_view data-v-39547e41 badge" wx:if="{{row.badge>0}}">{{row.badge}}</view>
+            <image src="{{'../../../static/HM-PersonalCenter/'+row.icon}}" class="_image data-v-39547e41"></image>
+          </view> {{row.name}} </view>
+      </view>
+    </view>
+    <view class="_view data-v-39547e41 list" wx:key="list" wx:for="{{severList}}" wx:for-index="list_i" wx:for-item="list">
+      <view class="_view data-v-39547e41 li {{[li_i == list.length - 1 ? 'noborder' : '']}}" bindtap="handleProxy" hover-class="hover" hover-stay-time="50" wx:key="li.name" data-eventid="{{'h6A-1-'+list_i+'-'+li_i}}" data-comkey="{{$k}}" wx:for="{{list}}"
+        wx:for-index="li_i" wx:for-item="li">
+        <view class="_view data-v-39547e41 icon">
+          <image src="{{'../../../static/HM-PersonalCenter/sever/'+li.icon}}" class="_image data-v-39547e41"></image>
+        </view>
+        <view class="_view data-v-39547e41 text">{{li.name}}</view>
+        <image class="_image data-v-39547e41 to" src="../../../static/HM-PersonalCenter/to.png"></image>
+      </view>
+    </view>
+  </view>
+</template>
